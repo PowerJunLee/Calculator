@@ -9,7 +9,6 @@ document.getElementById("calcButton").addEventListener("click", function () {
   const gfNew = parseInt(document.getElementById("gfNew").value) || 0;
   const gfOld = parseInt(document.getElementById("gfOld").value) || 0;
 
-  // 현금 포상 계산
   let cash = 0;
   if (carCounts.nexo === 1) cash += 720000;
   else if (carCounts.nexo >= 2) cash += Math.min(carCounts.nexo * 1000000, 5000000);
@@ -19,36 +18,29 @@ document.getElementById("calcButton").addEventListener("click", function () {
   else if (otherTotal === 2) cash += 400000;
   else if (otherTotal >= 3) cash += otherTotal * 300000;
 
-  // CRM 포인트 계산
   const crm = (tradein * 100000) + (gfNew * 100000) + (gfOld * 50000);
 
-  // 결과 출력
-  const resultEl = document.getElementById("result");
-  resultEl.innerHTML = `
-    💰 <strong>총 현금 포상:</strong> ${cash.toLocaleString()}원<br>
-    🎯 <strong>총 CRM 포인트:</strong> ${crm.toLocaleString()}P
-  `;
-  resultEl.classList.remove("show");
-  void resultEl.offsetWidth;
-  resultEl.classList.add("show");
+  alert(`💰 총 현금 포상: ${cash.toLocaleString()}원\n🎯 총 CRM 포인트: ${crm.toLocaleString()}P`);
 
-  // 추가 목표 제안
-  const suggestionEl = document.getElementById("suggestion");
-  let suggestion = "";
-
+  const nexoSuggestionEl = document.getElementById("nexoSuggestion");
+  let nexoMsg = "";
   if (carCounts.nexo === 0) {
-    suggestion = "📢 넥쏘 차량을 1대 더 판매하면 720,000원의 포상을 받을 수 있어요!";
+    nexoMsg = "🚀 넥쏘 차량을 1대 판매하면 720,000원의 포상을 받을 수 있어요!";
   } else if (carCounts.nexo === 1) {
-    suggestion = "📢 넥쏘 차량을 1대 더 판매하면 총 포상이 2,000,000원으로 증가해요!";
-  } else if (carCounts.nexo > 1 && carCounts.nexo < 5) {
-    suggestion = `📢 넥쏘 차량을 ${5 - carCounts.nexo}대 더 판매하면 최대 포상인 5,000,000원을 받을 수 있어요!`;
+    nexoMsg = "🚀 넥쏘를 1대 더 판매하면 포상이 2,000,000원으로 증가해요!";
+  } else if (carCounts.nexo >= 2 && carCounts.nexo < 5) {
+    nexoMsg = `🚀 넥쏘 ${5 - carCounts.nexo}대 더 판매하면 최대 포상인 5,000,000원을 받을 수 있어요!`;
   }
+  nexoSuggestionEl.innerText = nexoMsg;
 
-  if (otherTotal === 1) {
-    suggestion ||= "📢 그 외 차량 1대를 더 판매하면 총 포상이 400,000원으로 증가해요!";
+  const othersSuggestionEl = document.getElementById("othersSuggestion");
+  let othersMsg = "";
+  if (otherTotal === 0) {
+    othersMsg = "📈 중점 차종(그랜저, GV60~G90)을 1대 판매하면 100,000원의 포상이 발생합니다.";
+  } else if (otherTotal === 1) {
+    othersMsg = "📈 중점 차종을 1대 더 판매하면 포상이 400,000원으로 증가해요!";
   } else if (otherTotal === 2) {
-    suggestion ||= "📢 그 외 차량을 1대 더 판매하면 대당 300,000원이 적용되어 포상이 더 커져요!";
+    othersMsg = "📈 중점 차종을 1대 더 판매하면 대당 300,000원이 적용되어 포상이 더 커져요!";
   }
-
-  suggestionEl.innerText = suggestion;
+  othersSuggestionEl.innerText = othersMsg;
 });
