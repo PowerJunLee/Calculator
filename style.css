@@ -4,7 +4,8 @@ body {
   font-family: 'Noto Sans KR', sans-serif;
   background: #f5f8fa;
   margin: 0;
-  padding: 0;
+  padding: 10px;
+  box-sizing: border-box;
 }
 
 .container {
@@ -72,6 +73,12 @@ h2 i {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 10px;
+}
+
+@media (max-width: 480px) {
+  .input-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 button {
