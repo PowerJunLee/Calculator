@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>판촉지원금 계산기</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
   <script src="https://kit.fontawesome.com/0c3d0c5a9f.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -13,26 +13,24 @@
 
     <h2><i class="fas fa-box"></i> 출고 차량 수 입력</h2>
     <div class="input-grid">
-      <div class="input-group"><label>넥쏘</label><input type="number" id="nexo" min="0" value="0"></div>
-      <div class="input-group"><label>그랜저</label><input type="number" id="grandeur" min="0" value="0"></div>
-      <div class="input-group"><label>GV60</label><input type="number" id="gv60" min="0" value="0"></div>
-      <div class="input-group"><label>GV70</label><input type="number" id="gv70" min="0" value="0"></div>
-      <div class="input-group"><label>GV80</label><input type="number" id="gv80" min="0" value="0"></div>
-      <div class="input-group"><label>G70</label><input type="number" id="g70" min="0" value="0"></div>
-      <div class="input-group"><label>G80</label><input type="number" id="g80" min="0" value="0"></div>
-      <div class="input-group"><label>G90</label><input type="number" id="g90" min="0" value="0"></div>
+      <div class="input-group"><label>넥쏘</label><input type="number" id="nexo" /></div>
+      <div class="input-group"><label>그랜저</label><input type="number" id="grandeur" /></div>
+      <div class="input-group"><label>GV60</label><input type="number" id="gv60" /></div>
+      <div class="input-group"><label>GV70</label><input type="number" id="gv70" /></div>
+      <div class="input-group"><label>GV80</label><input type="number" id="gv80" /></div>
+      <div class="input-group"><label>G70</label><input type="number" id="g70" /></div>
+      <div class="input-group"><label>G80</label><input type="number" id="g80" /></div>
+      <div class="input-group"><label>G90</label><input type="number" id="g90" /></div>
     </div>
 
     <h2><i class="fas fa-gift"></i> 추가 포상 (CRM포인트)</h2>
-    <div class="input-group"><label>트레이드인 (10만P)</label><input type="number" id="tradeinCount" min="0" value="0"></div>
-    <div class="input-group"><label>굿프렌드 - 신규 (10만P)</label><input type="number" id="gfNew" min="0" value="0"></div>
-    <div class="input-group"><label>굿프렌드 - 기출고 (5만P)</label><input type="number" id="gfOld" min="0" value="0"></div>
+    <div class="input-group"><label>트레이드인</label><input type="number" id="tradeinCount" /></div>
+    <div class="input-group"><label>굿프렌드 - 신규</label><input type="number" id="gfNew" /></div>
+    <div class="input-group"><label>굿프렌드 - 기출고</label><input type="number" id="gfOld" /></div>
 
     <button id="calcButton"><i class="fas fa-calculator"></i> 계산하기</button>
-
     <div class="result" id="result"></div>
   </div>
-
   <script src="script.js"></script>
 </body>
 </html>
