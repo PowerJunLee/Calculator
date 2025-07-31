@@ -14,7 +14,6 @@ body {
   background: white;
   border-radius: 16px;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
-  animation: slideIn 0.5s ease-out;
 }
 
 h1 {
@@ -32,9 +31,8 @@ h1 i {
 h2 {
   font-size: 18px;
   color: #34495e;
-  border-bottom: 1px solid #eee;
-  padding-bottom: 6px;
   margin-top: 30px;
+  margin-bottom: 10px;
 }
 
 h2 i {
@@ -46,17 +44,17 @@ h2 i {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 12px 0;
+  margin: 8px 0;
 }
 
 .input-group label {
-  flex: 1.2;
-  font-size: 15px;
+  flex: 1;
+  font-size: 14px;
 }
 
 .input-group input {
   flex: 1;
-  padding: 10px;
+  padding: 8px;
   border: 1px solid #dfe6e9;
   border-radius: 10px;
   font-size: 14px;
@@ -72,19 +70,8 @@ h2 i {
 
 .input-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr 1fr;
   gap: 10px;
-  margin-top: 10px;
-  margin-bottom: 20px;
-}
-
-input[type="number"] {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #dcdde1;
-  border-radius: 10px;
-  font-size: 14px;
-  box-sizing: border-box;
 }
 
 button {
@@ -98,7 +85,7 @@ button {
   border: none;
   border-radius: 12px;
   cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: all 0.2s ease;
 }
 
 button:hover {
@@ -107,34 +94,18 @@ button:hover {
 }
 
 .result {
-  margin-top: 30px;
+  margin-top: 25px;
   font-size: 17px;
   font-weight: 500;
   text-align: center;
   color: #2d3436;
   line-height: 1.6;
   opacity: 0;
-  animation: fadeIn 1s forwards;
+  transform: translateY(10px);
+  transition: all 0.5s ease-out;
 }
 
-.fade-in {
-  opacity: 0;
-  animation: fadeIn 0.8s ease forwards;
-}
-
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes slideIn {
-  from {
-    transform: translateY(20px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
+.result.show {
+  opacity: 1;
+  transform: translateY(0);
 }
