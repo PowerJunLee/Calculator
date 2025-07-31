@@ -5,13 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>판촉지원금 계산기</title>
   <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/0c3d0c5a9f.js" crossorigin="anonymous"></script>
 </head>
 <body>
   <div class="container">
-    <h1>🚗 판촉지원금 계산기</h1>
+    <h1><i class="fas fa-car"></i> 판촉지원금 계산기</h1>
 
     <form id="calculatorForm">
-      <h2>📦 출고 차량 수 입력</h2>
+      <h2><i class="fas fa-box"></i> 출고 차량 수 입력</h2>
       <div class="input-group">
         <label>넥쏘</label>
         <input type="number" id="nexo" min="0" value="0">
@@ -28,24 +29,24 @@
         <input type="number" id="g90" placeholder="G90" min="0" value="0">
       </div>
 
-      <h2>🎁 추가 포상 (CRM포인트)</h2>
+      <h2><i class="fas fa-gift"></i> 추가 포상 (CRM포인트)</h2>
       <div class="input-group">
-        <label>트레이드인 (대당 10만P)</label>
+        <label>트레이드인 (10만P)</label>
         <input type="number" id="tradeinCount" min="0" value="0">
       </div>
       <div class="input-group">
-        <label>굿프렌드 - 신규고객 (대당 10만P)</label>
+        <label>굿프렌드 - 신규고객 (10만P)</label>
         <input type="number" id="gfNew" min="0" value="0">
       </div>
       <div class="input-group">
-        <label>굿프렌드 - 기출고 전담 (대당 5만P)</label>
+        <label>굿프렌드 - 기출고 전담 (5만P)</label>
         <input type="number" id="gfOld" min="0" value="0">
       </div>
 
-      <button type="submit">💸 계산하기</button>
+      <button type="submit"><i class="fas fa-calculator"></i> 계산하기</button>
     </form>
 
-    <div class="result" id="result">
+    <div class="result fade-in" id="result">
       💰 <strong>총 현금 포상:</strong> 0원<br>
       🎯 <strong>총 CRM 포인트:</strong> 0P
     </div>
