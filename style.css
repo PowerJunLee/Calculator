@@ -10,7 +10,7 @@ body {
 
 .container {
   max-width: 600px;
-  margin: 40px auto;
+  margin: 30px auto;
   padding: 30px 25px;
   background: white;
   border-radius: 16px;
@@ -97,7 +97,7 @@ button {
 
 button:hover {
   transform: scale(1.03);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.12);
 }
 
 .result {
@@ -110,9 +110,20 @@ button:hover {
   opacity: 0;
   transform: translateY(20px);
   transition: all 0.5s ease-out;
+  min-height: 48px;
 }
 
 .result.show {
   opacity: 1;
   transform: translateY(0);
+}
+
+.suggestion {
+  margin-top: 15px;
+  font-size: 15px;
+  color: #2d3436;
+  background: #f0f9ff;
+  border-left: 4px solid #74b9ff;
+  padding: 10px 12px;
+  border-radius: 6px;
 }
