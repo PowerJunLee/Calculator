@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>판촉지원금 계산기</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>🚗 판촉지원금 계산기</h1>
+
+    <form id="calculatorForm">
+      <h2>📦 출고 차량 수 입력</h2>
+      <div class="input-group">
+        <label>넥쏘</label><input type="number" id="nexo" min="0" value="0">
+      </div>
+      <label>그 외 (그랜저, GV60, GV70, GV80, G70, G80, G90)</label>
+      <div class="input-grid">
+        <input type="number" id="grandeur" placeholder="그랜저" min="0" value="0">
+        <input type="number" id="gv60" placeholder="GV60" min="0" value="0">
+        <input type="number" id="gv70" placeholder="GV70" min="0" value="0">
+        <input type="number" id="gv80" placeholder="GV80" min="0" value="0">
+        <input type="number" id="g70" placeholder="G70" min="0" value="0">
+        <input type="number" id="g80" placeholder="G80" min="0" value="0">
+        <input type="number" id="g90" placeholder="G90" min="0" value="0">
+      </div>
+
+      <h2>🎁 추가 포상</h2>
+      <label><input type="checkbox" id="tradein"> 트레이드인 (대당 10만 CRM포인트)</label><br>
+      <label><input type="checkbox" id="goodfriend"> 굿프렌드 (대당 10만 CRM포인트)</label>
+
+      <button type="submit">💸 계산하기</button>
+    </form>
+
+    <div class="result" id="result">
+      💰 <strong>총 현금 포상:</strong> 0원<br>
+      🎯 <strong>총 CRM 포인트:</strong> 0P
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
