@@ -1,44 +1,140 @@
-document.getElementById("calculatorForm").addEventListener("submit", function (e) {
-  e.preventDefault();
+@import url('https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600&display=swap');
 
-  // 차량 수 입력
-  const nexos = parseInt(document.getElementById("nexo").value) || 0;
-  const others = ["grandeur", "gv60", "gv70", "gv80", "g70", "g80", "g90"];
-  let otherCount = 0;
+body {
+  font-family: 'Pretendard', 'Apple SD Gothic Neo', sans-serif;
+  background: #f5f8fa;
+  margin: 0;
+  padding: 0;
+}
 
-  others.forEach(id => {
-    otherCount += parseInt(document.getElementById(id).value) || 0;
-  });
+.container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 30px 25px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+  animation: slideIn 0.5s ease-out;
+}
 
-  // 현금 포상 계산
-  let cashReward = 0;
+h1 {
+  text-align: center;
+  color: #2d3436;
+  font-size: 26px;
+  margin-bottom: 20px;
+}
 
-  // 넥쏘 계산
-  if (nexos === 1) {
-    cashReward += 720000;
-  } else if (nexos >= 2) {
-    cashReward += Math.min(nexos * 1000000, 5000000);
+h1 i {
+  color: #0984e3;
+  margin-right: 6px;
+}
+
+h2 {
+  font-size: 18px;
+  color: #34495e;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 6px;
+  margin-top: 30px;
+}
+
+h2 i {
+  color: #6c5ce7;
+  margin-right: 6px;
+}
+
+.input-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 12px 0;
+}
+
+.input-group label {
+  flex: 1.2;
+  font-size: 15px;
+}
+
+.input-group input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #dfe6e9;
+  border-radius: 10px;
+  font-size: 14px;
+  transition: border 0.3s, box-shadow 0.3s ease;
+}
+
+.input-group input:focus {
+  outline: none;
+  border: 1px solid #74b9ff;
+  background-color: #f0faff;
+  box-shadow: 0 0 5px #a29bfe;
+}
+
+.input-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #dcdde1;
+  border-radius: 10px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+button {
+  width: 100%;
+  padding: 14px;
+  margin-top: 20px;
+  background: linear-gradient(135deg, #6c5ce7, #0984e3);
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+button:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.12);
+}
+
+.result {
+  margin-top: 30px;
+  font-size: 17px;
+  font-weight: 500;
+  text-align: center;
+  color: #2d3436;
+  line-height: 1.6;
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 0.8s ease forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
   }
+}
 
-  // 나머지 차량 계산
-  if (otherCount === 1) {
-    cashReward += 100000;
-  } else if (otherCount === 2) {
-    cashReward += 400000;
-  } else if (otherCount >= 3) {
-    cashReward += otherCount * 300000;
+@keyframes slideIn {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
   }
-
-  // CRM 포인트 계산
-  const tradeinCount = parseInt(document.getElementById("tradeinCount").value) || 0;
-  const gfNew = parseInt(document.getElementById("gfNew").value) || 0;
-  const gfOld = parseInt(document.getElementById("gfOld").value) || 0;
-
-  let crmPoint = (tradeinCount * 100000) + (gfNew * 100000) + (gfOld * 50000);
-
-  // 결과 출력
-  document.getElementById("result").innerHTML = `
-    💰 <strong>총 현금 포상:</strong> ${cashReward.toLocaleString()}원<br>
-    🎯 <strong>총 CRM 포인트:</strong> ${crmPoint.toLocaleString()}P
-  `;
-});
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
