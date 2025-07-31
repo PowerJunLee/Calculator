@@ -13,8 +13,10 @@
     <form id="calculatorForm">
       <h2>📦 출고 차량 수 입력</h2>
       <div class="input-group">
-        <label>넥쏘</label><input type="number" id="nexo" min="0" value="0">
+        <label>넥쏘</label>
+        <input type="number" id="nexo" min="0" value="0">
       </div>
+
       <label>그 외 (그랜저, GV60, GV70, GV80, G70, G80, G90)</label>
       <div class="input-grid">
         <input type="number" id="grandeur" placeholder="그랜저" min="0" value="0">
@@ -26,9 +28,19 @@
         <input type="number" id="g90" placeholder="G90" min="0" value="0">
       </div>
 
-      <h2>🎁 추가 포상</h2>
-      <label><input type="checkbox" id="tradein"> 트레이드인 (대당 10만 CRM포인트)</label><br>
-      <label><input type="checkbox" id="goodfriend"> 굿프렌드 (대당 10만 CRM포인트)</label>
+      <h2>🎁 추가 포상 (CRM포인트)</h2>
+      <div class="input-group">
+        <label>트레이드인 (대당 10만P)</label>
+        <input type="number" id="tradeinCount" min="0" value="0">
+      </div>
+      <div class="input-group">
+        <label>굿프렌드 - 신규고객 (대당 10만P)</label>
+        <input type="number" id="gfNew" min="0" value="0">
+      </div>
+      <div class="input-group">
+        <label>굿프렌드 - 기출고 전담 (대당 5만P)</label>
+        <input type="number" id="gfOld" min="0" value="0">
+      </div>
 
       <button type="submit">💸 계산하기</button>
     </form>
